@@ -14,6 +14,7 @@ function _lein_commands() {
           "new:create a new project skeleton"
           "pom:write a pom.xml file to disk for maven interop"
           "test:run the project's tests"
+          "swank:start a swank server"
           "uberjar:Create a jar including the contents of each of deps"
           "upgrade:upgrade leiningen to the latest stable release"
           "version:print leiningen's version"
