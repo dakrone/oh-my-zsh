@@ -12,7 +12,11 @@ fi
 
 local return_code="%(?..%{$fg[red]%}%? ↵%{$reset_color%})"
 
-PROMPT='%{$fg[grey]%}‹ %{${fg[blue]}%}%~ $(git_prompt_info)%{$fg[grey]%}› %{${fg[$CARETCOLOR]}%}∴%{${reset_color}%} '
+# Handle dumb (emacs) terminals with no color
+if [ $TERM = "dumb" ]
+then PROMPT='‹ %~ › ∴ '
+else PROMPT='%{$fg[grey]%}‹ %{${fg[blue]}%}%~ $(git_prompt_info)%{$fg[grey]%}› %{${fg[$CARETCOLOR]}%}∴%{${reset_color}%} '
+fi
 
 RPS1='${return_code} $HN'
 
